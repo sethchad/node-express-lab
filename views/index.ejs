@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Index</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/app.css">
+    </head>
+    <body>
+        <h1>Pokemon</h1>
+        
+        <a href="/pokemon/new">Add a Pokemon</a>
+
+        <ul class="pokemon">
+            <% for (i = 0; i < pokemon.length; i++) { %>
+                <li>
+                    <a href="/pokemon/<%= pokemon[i].id %>"><%= pokemon[i].name %></a>
+                    
+                    <!-- DELETE FORM -->
+                    <form action="/pokemon/<%= pokemon[i].id; %>?_method=DELETE" method="POST">
+                        <input type="submit" value="DELETE"/>
+                    </form>
+                        <!-- EDIT LINK -->
+                    <a href="/pokemon/<%= pokemon[i].id; %>/edit">Edit</a>
+                </li>
+            <% }; %>
+        </ul>
+        
+
+        <!--<script src="" async defer></script>-->
+    </body>
+</html>
